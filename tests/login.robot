@@ -1,7 +1,7 @@
 *** Settings ***
 Resource    ../resource/API.resource
+Resource   ../resource/variables.resource
 
-*** Variables ***
 
 
 *** Test Cases ***

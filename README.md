@@ -9,7 +9,7 @@
 
  ## Instalar as dependencias
 
-### Primeiro baixar python 
+### Baixar python 
 
 - Python versão 3.11 
 
@@ -22,3 +22,32 @@
 
 - pip install robotframework-seleniumlibrary
 - pip install robotframework-requests
+
+## Librarys utilizadas
+- SeleniumLibrary
+- Collections
+- String
+- RequestsLibrary
+
+### Clone o projeto
+
+  git clone git@github.com:samillycarvalho/academy-api-robot.git
+
+### Entre no diretorio
+
+  cd academy-api-robot
+
+### Entre no vscode
+dentro do diretorio você da esse comando
+  code .
+ 
+### Executando os testes
+   robot -d results ./tests/nome-do-teste
+   ex: robot -d resuts ./tests/login.robot
+
+### Resultados
+ Tests Log    
+  
+
+
+

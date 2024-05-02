@@ -3,11 +3,9 @@ Library   SeleniumLibrary
 Library   Collections
 Library   String
 Library   RequestsLibrary
+Resource  variables.resource
 
-*** Variables ***
-${TOKEN}         	eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTMzMGMxZWZiOGYzZGFkMTNhNjgwOGIiLCJmdWxsTmFtZSI6IlFhLUNvZGVycy1TWVNBRE1JTiIsIm1haWwiOiJzeXNhZG1pbkBxYWNvZGVycy5jb20iLCJwYXNzd29yZCI6IiQyYiQxMCQza0MxMHZ1L0VqTW9SUVVtcVFxL0guN2NyV1lJSUJjQkRUMmc0UlUwQlE0bXJSaTRKRXhPdSIsImFjY2Vzc1Byb2ZpbGUiOiJTWVNBRE1JTiIsImNwZiI6IjExMTExMTExMTExIiwic3RhdHVzIjp0cnVlLCJhdWRpdCI6W3sicmVnaXN0ZXJlZEJ5Ijp7InVzZXJJZCI6IjExMTExMTExMTExMTExMTExMSIsInVzZXJMb2dpbiI6InN5c2FkbWluQHFhY29kZXJzLmNvbSJ9LCJyZWdpc3RyYXRpb25EYXRlIjoic2V4dGEtZmVpcmEsIDIwLzEwLzIwMjMsIDIwOjI0OjE0IEJSVCIsInJlZ2lzdHJhdGlvbk51bWJlciI6IjAxIiwiY29tcGFueUlkIjoiUWEuQ29kZXJzIiwiX2lkIjoiNjUzMzBjMWVmYjhmM2RhZDEzYTY4MDhjIn1dLCJfX3YiOjAsImlhdCI6MTcxMzM3NTA2OCwiZXhwIjoxNzEzNDYxNDY4fQ.ROuQ2OauLTuX3vLloAjssx1flEhgklGCbSkBfwEJzVg
-
-
+ 
 *** Keywords ***
 Create API Session
     ${headers}    Create Dictionary    accept=application/json    Content-Type=application/json
@@ -16,7 +14,7 @@ Create API Session
     
 
 Login de acesso   
-   ${body}    Create Dictionary       mail=sysadmin@qacoders.com  password=1234@Test    
+   ${body}    Create Dictionary       mail=${mail}   password=${password}t    
    Log  ${body}
    Create API Session    # Chamando a keyword diretamente
    ${response}=    POST On Session  alias=APITheOriginals  url=/api/login   json=${body}
