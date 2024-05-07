@@ -65,4 +65,4 @@ code .
 ![image](https://github.com/samillycarvalho/academy-api-robot/assets/116562223/c3a6e06a-bdfe-46a1-8a96-7fe0f2099666)
 
 ##### Projeto desenvolvido por
-[https://www.linkedin.com/in/s%C3%A2milly-carvalho](https://www.linkedin.com/in/s%C3%A2milly-carvalho-444638226/)
+-[@samillycarvalho](https://www.linkedin.com/in/s%C3%A2milly-carvalho-444638226/)
