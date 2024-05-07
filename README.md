@@ -51,13 +51,13 @@ code .
 ```
 
 ### Executando os testes
-<<<<<<< HEAD
+
    robot -d results ./tests/nome-do-teste
    ex: robot -d resuts ./tests/
-||||||| 85bae2d
+
    robot -d results ./tests/nome-do-teste
    ex: robot -d resuts ./tests/login.robot
-=======
+
 
 robot -d results ./tests/nome-do-teste
 
