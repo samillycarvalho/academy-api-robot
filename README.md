@@ -1,22 +1,21 @@
-# Projeto de API com robot framework 
+# Projeto de API com robot framework
 
 ## Tecnologias
+
 - Robot
 - Python
 - VScode
 - Git
 
+## Instalar as dependencias
 
- ## Instalar as dependencias
+### Baixar python
 
-### Baixar python 
-
-- Python versão 3.11 
+- Python versão 3.11
 
 ### Baixar robotframework
 
 - pip install robotframework
-
 
 ### Instalar as librarys para o projeto
 
@@ -24,6 +23,7 @@
 - pip install robotframework-requests
 
 ## Librarys utilizadas
+
 - SeleniumLibrary
 - Collections
 - String
@@ -31,23 +31,47 @@
 
 ### Clone o projeto
 
-  git clone git@github.com:samillycarvalho/academy-api-robot.git
+```jsx
+git clone git@github.com:samillycarvalho/academy-api-robot.git
+```
 
 ### Entre no diretorio
 
-  cd academy-api-robot
+```jsx
+cd academy-api-robot
+```
 
 ### Entre no vscode
+
 dentro do diretorio você da esse comando
-  code .
- 
+
+```jsx
+
+code .
+```
+
 ### Executando os testes
+<<<<<<< HEAD
    robot -d results ./tests/nome-do-teste
    ex: robot -d resuts ./tests/
+||||||| 85bae2d
+   robot -d results ./tests/nome-do-teste
+   ex: robot -d resuts ./tests/login.robot
+=======
+
+robot -d results ./tests/nome-do-teste
+
+ex:
+
+```jsx
+
+ robot -d resuts ./tests/login.robot
+```
+>>>>>>> fcfcc4c0373251f061bbae8738ee3ff6040c4c8a
 
 ### Resultados
- Tests Log    
-  
+
+Tests Log
 
 
 
