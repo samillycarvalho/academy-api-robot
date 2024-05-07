@@ -55,14 +55,6 @@ code .
    robot -d results ./tests/nome-do-teste
    ex: robot -d resuts ./tests/
 
-   robot -d results ./tests/nome-do-teste
-   ex: robot -d resuts ./tests/login.robot
-
-
-robot -d results ./tests/nome-do-teste
-
-ex:
-
 ```jsx
 
  robot -d resuts ./tests/login.robot
@@ -70,8 +62,7 @@ ex:
 
 
 ### Resultados
+![image](https://github.com/samillycarvalho/academy-api-robot/assets/116562223/c3a6e06a-bdfe-46a1-8a96-7fe0f2099666)
 
-Tests Log
-![alt text](image.png)
-
-
+##### Projeto desenvolvido por
+https://www.linkedin.com/in/s%C3%A2milly-carvalho
