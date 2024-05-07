@@ -5,14 +5,12 @@ Library   String
 Library   RequestsLibrary
 Resource  variables.resource
 
- 
 *** Keywords ***
 Create API Session
     ${headers}    Create Dictionary    accept=application/json    Content-Type=application/json
     Create Session     alias=APITheOriginals      url=https://the-originals.qacoders-academy.com.br  
     ...                                                                        headers=${headers}
     
-
 Login de acesso   
    ${body}    Create Dictionary       mail=${mail}   password=${password}   
    Log  ${body}
@@ -21,13 +19,11 @@ Login de acesso
    Log  ${response.json()}
    Set Test Variable    ${TOKEN}     ${response.json()["token"]}
 
-    
 Validar o token e gravar em um header de autorização
    ${headers}  Create Dictionary  Authorization=Bearer ${TOKEN}
    ${response}  GET On Session   alias=APITheOriginals   url=/api/validateToken  headers=${headers}
     Log    ${response.content}
     Log   ${TOKEN}
-
 
 
 Criar um novo usuário 
@@ -37,7 +33,33 @@ Criar um novo usuário
     Set Test Variable        ${CPF}    ${cpf_randomico}
     Set Test Variable        ${EMAIL_TEST}    ${palavra_randomica}@hotmail.com
 
-    
+Criar um nome randomico departamento/board     
+   ${nome_randomic}      Generate Random String    10   chars=[LETTERS]
+   ${nome_randomic}      Convert To Lower Case    ${nome_randomic} 
+   Set Test Variable    ${nomedepartamento}        ${nome_randomic}depmen
+   Log     ${nomedepartamento}
+   ${nome_randomic}      Generate Random String    9   chars=[LETTERS]
+   ${nome_randomic}      Convert To Lower Case    ${nome_randomic} 
+   Set Test Variable    ${nomedepart&}        ${nome_randomic}depar&
+   Log     ${nomedepart&}
+   ${nome_randomic}      Generate Random String    8   chars=[LETTERS]
+   ${nome_randomic}      Convert To Uppercase    ${nome_randomic} 
+   Set Test Variable    ${NOMEDEPAT}        ${nome_randomic}DEP
+   Log          ${NOMEDEPAT} 
+    ${nome_randomic}      Generate Random String    9   chars=[LETTERS]
+   ${nome_randomic}      Convert To Lower Case    ${nome_randomic} 
+   Set Test Variable    ${nomedepartminus}        ${nome_randomic}depar&
+   Log     ${nomedepartminus}
+   ${nome_randomic}      Generate Random String    50   chars=[LETTERS]
+   ${nome_randomic}      Convert To Lower Case    ${nome_randomic} 
+   Set Test Variable    ${nomecom50}            ${nome_randomic}
+   Log     ${nomecom50}
+   ${nome_randomic}      Generate Random String    7   chars=[LETTERS]
+   ${nome_randomic}      Convert To Lower Case    ${nome_randomic} 
+   Set Test Variable    ${nameboard}            ${nome_randomic}
+   Log     ${nameboard} 
+   
+*** Keywords ***
 
 Cadastrar um usuario
     ${headers}=  Create Dictionary      Authorization=${TOKEN}
@@ -306,7 +328,7 @@ Listar usuários
 
 Incluir department
     ${headers}=    Create Dictionary    Authorization=${token}
-    ${body}=    Create Dictionary    departmentName=${Departmentname}    costCenterId=65855af6a2d3ae70485da0b7
+    ${body}=    Create Dictionary    departmentName=${nomedepartamento}    costCenterId=65855af6a2d3ae70485da0b7
     Log   ${body}
     Create API Session
     ${response}=    POST On Session    alias=APITheOriginals    url=/api/department/    json=${body}    headers=${headers}
@@ -316,7 +338,7 @@ Incluir department
 
 departamento com letras maiusculas
     ${headers}=    Create Dictionary    Authorization=${token}
-    ${body}=    Create Dictionary    departmentName=${DepartamentMaiuscula}   costCenterId=65855af6a2d3ae70485da0b7
+    ${body}=    Create Dictionary    departmentName=${NOMEDEPAT}   costCenterId=65855af6a2d3ae70485da0b7
     Log   ${body}
     Create API Session
     ${response}=    POST On Session    alias=APITheOriginals    url=/api/department/    json=${body}  
@@ -328,7 +350,7 @@ departamento com letras maiusculas
 
 departamento com letras minúscula
     ${headers}=    Create Dictionary    Authorization=${token}
-    ${body}=    Create Dictionary    departmentName=${departamentominusculo}  costCenterId=65855af6a2d3ae70485da0b7
+    ${body}=    Create Dictionary    departmentName=${nomedepartminus}  costCenterId=65855af6a2d3ae70485da0b7
     Log   ${body}
     Create API Session
     ${response}=    POST On Session    alias=APITheOriginals    url=/api/department/    json=${body}  
@@ -340,7 +362,7 @@ departamento com letras minúscula
 
 departamento com letras e caractere &
     ${headers}=    Create Dictionary    Authorization=${token}
-    ${body}=    Create Dictionary    departmentName=${department&}  costCenterId=65855af6a2d3ae70485da0b7
+    ${body}=    Create Dictionary    departmentName=${nomedepart&}  costCenterId=65855af6a2d3ae70485da0b7
     Log   ${body}
     Create API Session
     ${response}=    POST On Session    alias=APITheOriginals    url=/api/department/    json=${body}  
@@ -372,7 +394,7 @@ departamento com caracteres especias
     Dictionary Should Contain Key       ${response.json()}   error
     List Should Contain Value      ${response.json()}[error]   O campo 'departamento' só pode conter letras e o caractere especial '&'.
 
-departament é obrigátorio
+departament é obrigátorio 
     ${headers}=    Create Dictionary    Authorization=${token}
     ${body}=    Create Dictionary       costCenterId=65855af6a2d3ae70485da0b7
     Log   ${body}
@@ -383,16 +405,7 @@ departament é obrigátorio
     Dictionary Should Contain Key      ${response.json()}    error
     List Should Contain Value      ${response.json()}[error]  O campo 'departamento' é obrigatório.
 
-department com nome ja cadastrado
-    ${headers}=    Create Dictionary    Authorization=${token}
-    ${body}=    Create Dictionary    departmentName=${Departmentname}   costCenterId=65855af6a2d3ae70485da0b7
-    Log   ${body}
-    Create API Session
-    ${response}=    POST On Session    alias=APITheOriginals    url=/api/department/    json=${body}  
-    ...        headers=${headers}   expected_status=409
-    Log   ${response.json()}
-    Dictionary Should Contain Key       ${response.json()}     alert
-    List Should Contain Value      ${response.json()}[alert]   Não é possível salvar esse registro. Departamento já cadastrado no sistema.
+
 
 
 departament com 51 caractere
@@ -408,7 +421,7 @@ departament com 51 caractere
 
 departament com 50 caractere
     ${headers}=    Create Dictionary    Authorization=${token}
-    ${body}=    Create Dictionary    departmentName=${departament50}    costCenterId=65855af6a2d3ae70485da0b7
+    ${body}=    Create Dictionary    departmentName=${nomecom50}     costCenterId=65855af6a2d3ae70485da0b7
     Log   ${body}
     Create API Session
     ${response}=    POST On Session    alias=APITheOriginals    url=/api/department/    json=${body}  
@@ -417,7 +430,16 @@ departament com 50 caractere
     Set Test Variable    ${ID_USUARIO}   ${response.json()['newDepartment']['_id']}
     Set Test Variable    ${ID_USUARIO}   ${response.json()} 
     
-
+department com nome ja cadastrado
+    ${headers}=    Create Dictionary    Authorization=${token}
+    ${body}=    Create Dictionary    departmentName=${nomedepartamento}   costCenterId=65855af6a2d3ae70485da0b7
+    Log   ${body}
+    Create API Session
+    ${response}=    POST On Session    alias=APITheOriginals    url=/api/department/    json=${body}  
+    ...        headers=${headers}   expected_status=409
+    Log   ${response.json()}
+    Dictionary Should Contain Key       ${response.json()}     alert
+    List Should Contain Value      ${response.json()}[alert]   Não é possível salvar esse registro. Departamento já cadastrado no sistema.
 
 Listar department
     ${headers}=    Create Dictionary    Authorization=${token}
@@ -444,7 +466,7 @@ Listar diretoria
 
 Incluir diretoria
     ${headers}=    Create Dictionary    Authorization=${token}
-    ${body}=    Create Dictionary      boardName=${boardname}   
+    ${body}=    Create Dictionary      boardName=${nameboard}    
     Create API Session 
     ${response}   POST On Session  alias=APITheOriginals   url=/api/board   json=${body}    headers=${headers}
     Log   ${response.json()}
@@ -453,7 +475,7 @@ Incluir diretoria
 
 diretoria com letras maiúsculas
     ${headers}=    Create Dictionary    Authorization=${token}
-    ${body}=    Create Dictionary      boardName=${boardMaiusculo} 
+    ${body}=    Create Dictionary      boardName=${NOMEDEPAT} 
     Create API Session 
     ${response}   POST On Session  alias=APITheOriginals   url=/api/board  
     ...    json=${body}    headers=${headers}   expected_status=201
@@ -464,7 +486,7 @@ diretoria com letras maiúsculas
 
 diretoria com letras minúsculas      
     ${headers}=    Create Dictionary    Authorization=${token}
-    ${body}=    Create Dictionary      boardName=${boardminuscula} 
+    ${body}=    Create Dictionary      boardName=${nameboard} 
     Create API Session 
     ${response}   POST On Session  alias=APITheOriginals   url=/api/board  
     ...     json=${body}    headers=${headers}   expected_status=201
@@ -474,7 +496,7 @@ diretoria com letras minúsculas
 
 diretoria com letras e caractere &     
     ${headers}=    Create Dictionary    Authorization=${token}
-    ${body}=    Create Dictionary      boardName=${board&}
+    ${body}=    Create Dictionary      boardName=${nomedepart&}
     Create API Session 
     ${response}   POST On Session  alias=APITheOriginals   url=/api/board  
     ...     json=${body}    headers=${headers}   expected_status=201
@@ -518,7 +540,7 @@ diretoria é obrigatório
 
 diretoria ja cadastrado 
     ${headers}=    Create Dictionary    Authorization=${token}
-    ${body}=    Create Dictionary      boardName=${boardname} 
+    ${body}=    Create Dictionary      boardName=${nameboard} 
     Create API Session 
     ${response}   POST On Session  alias=APITheOriginals   url=/api/board  
     ...     json=${body}    headers=${headers}   expected_status=409

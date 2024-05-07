@@ -7,22 +7,26 @@ Resource   ../resource/variables.resource
 CT01 - Cadastrar um Departamento
    Create API Session  
    Login de acesso 
+   Criar um nome randomico departamento/board  
    Incluir department
 
 
 CT02 - departamento com letras maiusculas  
    Create API Session  
     Login de acesso   
+   Criar um nome randomico departamento/board   
    departamento com letras maiusculas 
   
 CT03 - departamento com letras minúscula
     Create API Session  
     Login de acesso
+    Criar um nome randomico departamento/board   
     departamento com letras minúscula
 
 CT04 - departamento com letras e caractere &
    Create API Session  
    Login de acesso  
+   Criar um nome randomico departamento/board    
    departamento com letras e caractere &
 
 
@@ -41,21 +45,25 @@ CT07 - departament é obrigátorio
     Login de acesso 
    departament é obrigátorio
 
-CT08 - department com nome ja cadastrado
-   Create API Session  
-   Login de acesso 
-   department com nome ja cadastrado
 
-CT09 - departament com 51 caractere
+CT08 - departament com 51 caractere
   Create API Session  
    Login de acesso
   departament com 51 caractere
 
-CT10 - departament com 50 caractere
+CT9 - departament com 50 caractere
    Create API Session  
    Login de acesso
+   Criar um nome randomico departamento/board   
   departament com 50 caractere
 
+CT10 - department ja cadastrado
+   Create API Session  
+   Login de acesso 
+   Criar um nome randomico departamento/board  
+   Incluir department
+   department com nome ja cadastrado
+    
 CT11 - Editar departamento
    Create API Session  
    Login de acesso 

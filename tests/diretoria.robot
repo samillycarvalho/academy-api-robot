@@ -6,21 +6,25 @@ Resource   ../resource/variables.resource
 CT01 - Cadastrar um Board
     Create API Session  
     Login de acesso 
+    Criar um nome randomico departamento/board  
    Incluir diretoria
 
 CT02 - diretoria com letras maiúsculas
    Create API Session  
     Login de acesso
+    Criar um nome randomico departamento/board  
    diretoria com letras maiúsculas
 
 CT03 - diretoria com letras minúsculas
     Create API Session  
     Login de acesso
+    Criar um nome randomico departamento/board  
    diretoria com letras minúsculas
 
 CT04 - diretoria com letras e caractere & 
    Create API Session  
    Login de acesso
+   Criar um nome randomico departamento/board  
    diretoria com letras e caractere & 
 
 CT05 - diretoria com letras e números
@@ -42,8 +46,10 @@ CT07 - diretoria é obrigatório
 
 CT08 - diretoria ja cadastrado 
     Create API Session  
-    Login de acesso 
-     diretoria ja cadastrado 
+    Login de acesso
+    Criar um nome randomico departamento/board 
+    Incluir diretoria 
+    diretoria ja cadastrado 
 
 
 
