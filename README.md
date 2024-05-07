@@ -43,7 +43,7 @@ dentro do diretorio você da esse comando
  
 ### Executando os testes
    robot -d results ./tests/nome-do-teste
-   ex: robot -d resuts ./tests/login.robot
+   ex: robot -d resuts ./tests/
 
 ### Resultados
  Tests Log    

@@ -1,4 +1,5 @@
-name: Incluir departamento
+name: lista de diretoria
+ 
 on: push
  
 jobs:
@@ -20,7 +21,7 @@ jobs:
       - name: Run Robot Framework tests
         # run: echo Executando os testes de API do Robot
         run: |
-          robot -d results ./tests/incluir.departamento.robot
+          robot -d results ./tests/diretoria.robot
       - name: Test Report
         # run: echo Salvando o Report dos Testes
         uses: actions/upload-artifact@v4

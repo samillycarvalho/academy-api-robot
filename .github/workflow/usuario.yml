@@ -21,7 +21,7 @@ jobs:
       - name: Run Robot Framework tests
         # run: echo Executando os testes de API do Robot
         run: |
-          robot -d results ./tests/cadastro.usuario.robot
+          robot -d results ./tests/usuario.robot
       - name: Test Report
         # run: echo Salvando o Report dos Testes
         uses: actions/upload-artifact@v4

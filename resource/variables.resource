@@ -1,5 +1,38 @@
 *** Variables ***
-${TOKEN}         	eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTMzMGMxZWZiOGYzZGFkMTNhNjgwOGIiLCJmdWxsTmFtZSI6IlFhLUNvZGVycy1TWVNBRE1JTiIsIm1haWwiOiJzeXNhZG1pbkBxYWNvZGVycy5jb20iLCJwYXNzd29yZCI6IiQyYiQxMCQza0MxMHZ1L0VqTW9SUVVtcVFxL0guN2NyV1lJSUJjQkRUMmc0UlUwQlE0bXJSaTRKRXhPdSIsImFjY2Vzc1Byb2ZpbGUiOiJTWVNBRE1JTiIsImNwZiI6IjExMTExMTExMTExIiwic3RhdHVzIjp0cnVlLCJhdWRpdCI6W3sicmVnaXN0ZXJlZEJ5Ijp7InVzZXJJZCI6IjExMTExMTExMTExMTExMTExMSIsInVzZXJMb2dpbiI6InN5c2FkbWluQHFhY29kZXJzLmNvbSJ9LCJyZWdpc3RyYXRpb25EYXRlIjoic2V4dGEtZmVpcmEsIDIwLzEwLzIwMjMsIDIwOjI0OjE0IEJSVCIsInJlZ2lzdHJhdGlvbk51bWJlciI6IjAxIiwiY29tcGFueUlkIjoiUWEuQ29kZXJzIiwiX2lkIjoiNjUzMzBjMWVmYjhmM2RhZDEzYTY4MDhjIn1dLCJfX3YiOjAsImlhdCI6MTcxMzM3NTA2OCwiZXhwIjoxNzEzNDYxNDY4fQ.ROuQ2OauLTuX3vLloAjssx1flEhgklGCbSkBfwEJzVg
 ${mail}             sysadmin@qacoders.com
 ${password}         1234@Test 
- 
+ # usuário
+
+${fullName}                 Fulano da Silva Santos
+${accessProfile}            ADMIN
+${fullName23}               Fulano da Silva Santos34
+${fullName##}               Fulano da Silva Santos#@
+${fullNameminusculo}        fulano da silva santos
+${fullName101carc}          Jussara Maria Mariana Muriá da Silva Penha dos Santos Sousa Oliveira Alves Carvalho Maia Marianoconsi
+${fullName100carc}          Kussara Maria Mariana Muriá da Silva Penha dos Santos Sousa Oliveira Alves Carvalho Maia Marianocond
+${emailespacodominio}       fulanodasila @qa .coders.com
+${emailinválido}            fulana.coders.com
+${password13}               123456@Testest
+${password7}                123#asD
+${password8}                12aA567@
+${confirmarsenhadif}        123456@Tett
+${perfildeacessoinva}       ADMINISTRADOR
+${CPF10}                    1234567890
+${CPF12}                    123456789012
+
+#  departamento
+${Departmentname}           Departamento Fina Depart
+${DepartamentMaiuscula}     FINANCEEIROS DEPARTA TECNOLOGY
+${departamentominusculo}    finannceiross departmenty
+${departamentnumero}        Departamento2 Financas2
+${department&}              Advogacia&advogado&cya
+${department@@@#}           Advogacia#@
+${departamento51}           departamentooooooooooooooooooooooooooosssssssssssso
+${departament50}            Kelartamentooooooooooooooooooooooooooosssssssssssa
+# diretoria
+${boardname}                diretoriiaboardtest    
+${boardMaiusculo}           DIRRETORIATESTESDIRETO
+${boardminuscula}           seccretariarecpcao
+${board&}                   Secre&Cia&flor
+${boardnumero}              Secretariaia12
+${boardcaractere#}          Secretariaia@#
