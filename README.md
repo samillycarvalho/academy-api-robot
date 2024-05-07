@@ -67,7 +67,7 @@ ex:
 
  robot -d resuts ./tests/login.robot
 ```
->>>>>>> fcfcc4c0373251f061bbae8738ee3ff6040c4c8a
+
 
 ### Resultados
 
