@@ -14,7 +14,7 @@ Create API Session
     
 
 Login de acesso   
-   ${body}    Create Dictionary       mail=${mail}   password=${password}t    
+   ${body}    Create Dictionary       mail=${mail}   password=${password}   
    Log  ${body}
    Create API Session    # Chamando a keyword diretamente
    ${response}=    POST On Session  alias=APITheOriginals  url=/api/login   json=${body}
@@ -306,7 +306,7 @@ Listar usuários
 
 Incluir department
     ${headers}=    Create Dictionary    Authorization=${token}
-    ${body}=    Create Dictionary    departmentName=diretaaaaaa&&   costCenterId=65855af6a2d3ae70485da0b7
+    ${body}=    Create Dictionary    departmentName=${Departmentname}    costCenterId=65855af6a2d3ae70485da0b7
     Log   ${body}
     Create API Session
     ${response}=    POST On Session    alias=APITheOriginals    url=/api/department/    json=${body}    headers=${headers}
@@ -444,7 +444,7 @@ Listar diretoria
 
 Incluir diretoria
     ${headers}=    Create Dictionary    Authorization=${token}
-    ${body}=    Create Dictionary      boardName=diretoria&a 
+    ${body}=    Create Dictionary      boardName=${boardname}   
     Create API Session 
     ${response}   POST On Session  alias=APITheOriginals   url=/api/board   json=${body}    headers=${headers}
     Log   ${response.json()}

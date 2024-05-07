@@ -125,3 +125,7 @@ CT20 - usuário com cpf com 10 números
   usuário com cpf com 10 números
 
 CT21 - usuário com cpf com 12 números 
+   Create API Session
+   Login de acesso  
+   Criar um novo usuário
+   usuário com cpf com 10 números
